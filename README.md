@@ -13,18 +13,23 @@ If we like to get the given name and family name of all persons known by e.g. St
 
 ```javascript
 const cf = require('clownface')
-# extend the RDF/JS dataset with clownface
+// extend the RDF/JS dataset with clownface
 const tbbt = cf(dataset)
-# get a starting node inside the dataset
+// get a starting node inside the dataset
 const stuartBloom = tbbt.node('http://localhost:8080/data/person/stuart-bloom'))
-# query for all people Stuart knows and print their full name
+// query for all people Stuart knows and print their full name
 stuartBloom
-  .out('http://schema.org/knows') # get all nodes connected through schema:knows 
-  .map(person => person # for every result
-    .out(['http://schema.org/givenName', 'http://schema.org/familyName']) # get the schema:givenName and schema:familyName
-    .values.join(' ') # join them with an empty space
+  // get all nodes connected through schema:knows 
+  .out('http://schema.org/knows') 
+  // for every result
+  .map(person => person 
+    // get the schema:givenName and schema:familyName
+    .out(['http://schema.org/givenName', 'http://schema.org/familyName']) 
+    // join the givenName and familyName with an empty space
+    .values.join(' ') 
   )
-  .join(', ') # join the list of names with a comma
+  // join the list of names with a comma
+  .join(', ') 
 ```
 
 Clownface provides a set of chainable functions. The most important are `.in( predicate)` and `.out(predicate)` which allow the traversal through the graph. It is possible to chain as many of these functions to extract a sub-graph from the available dataset.
