@@ -5,6 +5,7 @@
   "main": "index.js",
   "module": "index.mjs",
   "browser": "index.mjs",
+  "types": "index.d.ts",
   "exports": {
     "require": "./index.js",
     "import": "./index.mjs"
@@ -41,6 +42,7 @@
     "@rdfjs/parser-n3": "^1.1.2",
     "@tpluscode/rdf-ns-builders": "^0.3.6",
     "@tpluscode/rdf-string": "^0.2.16",
+    "@types/clownface": "^0.12.15",
     "babel-plugin-add-import-extension": "^1.4.1",
     "babel-plugin-add-module-exports": "^1.0.2",
     "c8": "^7.2.1",
