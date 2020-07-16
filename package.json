@@ -16,6 +16,11 @@
     "test": "c8 --reporter=lcov mocha test/*.test.mjs test/**/*.test.mjs",
     "docs:serve": "docsify serve docs"
   },
+  "files": [
+    "lib",
+    "index.js",
+    "index.mjs"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/rdf-esm/clownface.git"
@@ -65,5 +70,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "engines": {
+    "node": ">=12"
   }
 }
